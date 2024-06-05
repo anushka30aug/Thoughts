@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import noteContext from './notecontext';
 import toast, { Toaster } from 'react-hot-toast';
-const host = process.env.HOST;
+const host = process.env.REACT_APP_HOST;
 
 function NoteState(props) {
   const [Notes, setNotes] = useState([]);

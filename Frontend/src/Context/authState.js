@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import authContext from "./authcontext";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';;
-const host = process.env.HOST;
+const host = process.env.REACT_APP_HOST;
 
 function AuthState(props) {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
