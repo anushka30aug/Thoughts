@@ -1,0 +1,14 @@
+.content{
+    color:white;
+    padding: 1em;
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: justify;
+    height:max-content;
+    min-height: 70vh;
+}
+
+.content h4{
+    text-align: center;
+    margin: .5em;
+}

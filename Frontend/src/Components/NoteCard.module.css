@@ -1,0 +1,68 @@
+html{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+ margin:0;
+ background-color: rgb(36, 55, 74);
+ 
+}
+
+#notecard{
+    margin:1em;
+    padding:.5em;
+    border-bottom: .1em dotted gray;
+    background-color: #E5DDC5;
+    max-width: 700px;
+    margin: 1em auto;
+    border-radius: 1em ;
+
+}
+
+#note_title{
+    background-color: #153448;
+    color: white;
+    width: 100%;
+    margin: .5em auto;
+    border-radius: .3em;
+    padding:.2em;
+    text-align: center;
+    /* font-weight:bolder; */
+    line-break: anywhere;
+    font-size: larger;
+    margin-bottom: 0;
+}
+
+#note_tag{
+    margin: .5em auto;
+    width: 100%;
+    background-color: #153448;
+    color: white;
+    border-radius: .3em;
+    text-align: center;
+    padding:.2em;
+    font-weight: bold;
+    line-break:anywhere;
+    margin-top: 0;
+    font-size: small;
+}
+#note_desc{
+    margin: .5em;
+    padding:.2em;
+    text-align: center;
+    margin: .5em auto;
+    max-width: 500px;
+    /* background-color: rgb(164, 199, 220); */
+    font-weight:500;
+    border-radius: .3em;
+    line-break: anywhere;
+
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
