@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import noteContext from './notecontext';
 import toast, { Toaster } from 'react-hot-toast';
+const host = process.env.HOST;
 
 function NoteState(props) {
   const [Notes, setNotes] = useState([]);
@@ -9,7 +10,7 @@ function NoteState(props) {
 
   console.log(toast)
   async function fetchNotes() {
-    const note = await fetch('http://localhost:5000/api/notes/fetchNotes', {
+    const note = await fetch(`${host}/api/notes/fetchNotes`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +26,7 @@ function NoteState(props) {
 
   const addNote = async (title, tag, desc) => {
     const add = { title: title, tag: tag, description: desc };
-    const response = await fetch('http://localhost:5000/api/notes/addNote', {
+    const response = await fetch(`${host}/api/notes/addNote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ function NoteState(props) {
       }
     }
     const add = { title: edit.title, tag: edit.tag, description: edit.description };
-    const note = await fetch(`http://localhost:5000/api/notes/updateNote/${edit.id}`, {
+    const note = await fetch(`${host}/api/notes/updateNote/${edit.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -75,7 +76,7 @@ function NoteState(props) {
   }
   const deleteNote = async (id) => {
     const newNotes = Notes.filter(notes => notes._id !== id);
-    const response = await fetch(`http://localhost:5000/api/notes/deleteNote/${id}`, {
+    const response = await fetch(`${host}/api/notes/deleteNote/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import authContext from "./authcontext";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';;
-
+const host = process.env.HOST;
 
 function AuthState(props) {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -14,7 +14,7 @@ function AuthState(props) {
     const navigate = useNavigate();
 
     const login = async () => {
-        const data = await fetch('http://localhost:5000/api/auth/login',
+        const data = await fetch(`${host}/api/auth/login`,
             {
                 method: 'POST',
                 headers: {
@@ -46,7 +46,7 @@ function AuthState(props) {
     }
 
     const signup = async () => {
-        const data = await fetch('http://localhost:5000/api/auth/signup',
+        const data = await fetch(`${host}/api/auth/signup`,
             {
                 method: 'POST',
                 headers: {
@@ -79,7 +79,7 @@ function AuthState(props) {
 
     const verifyEmailId = async () => {
         
-        const data = await fetch('http://localhost:5000/api/forgetpassword/verifyEmail',
+        const data = await fetch(`${host}/api/forgetpassword/verifyEmail`,
             {
                 method: 'POST',
                 headers: {
@@ -109,7 +109,7 @@ function AuthState(props) {
     }
 
     const sendMail = async()=>{
-        const data = await fetch('http://localhost:5000/api/forgetpassword/sendmail',
+        const data = await fetch(`${host}/api/forgetpassword/sendmail`,
         {
             method:'POST',
             headers:{
@@ -131,7 +131,7 @@ function AuthState(props) {
     }
 
     const setNewPassword=async()=>{
-        const data = await fetch('http://localhost:5000/api/forgetpassword/setpassword',{
+        const data = await fetch(`${host}/api/forgetpassword/setpassword`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json', 
